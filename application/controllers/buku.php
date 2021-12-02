@@ -221,11 +221,11 @@ Penerbit', 'required|min_length[3]', [
         //memuat atau memanggil library upload
         $this->load->library('upload', $config);
         if ($this->form_validation->run() == false) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('templates/sidebar', $data);
-            $this->load->view('templates/topbar', $data);
+            $this->load->view('tampilan/header', $data);
+            $this->load->view('tampilan/sidebar', $data);
+            $this->load->view('tampilan/topbar', $data);
             $this->load->view('buku/ubah_buku', $data);
-            $this->load->view('templates/footer');
+            $this->load->view('tampilan/footer');
         } else {
             if ($this->upload->do_upload('image')) {
                 $image = $this->upload->data();

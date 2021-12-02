@@ -10,14 +10,6 @@
     </a>
 
     <!-- Divider -->
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('user') ?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->

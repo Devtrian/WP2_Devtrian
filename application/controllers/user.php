@@ -11,11 +11,11 @@ class User extends CI_Controller
     {
         $data['judul'] = 'Profil Saya';
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('tampilan/header', $data);
-        $this->load->view('tampilan/sidebar', $data);
-        $this->load->view('tampilan/topbar', $data);
+        $this->load->view('user/tampilan/header', $data);
+        $this->load->view('user/tampilan/sidebar', $data);
+        $this->load->view('user/tampilan/topbar', $data);
         $this->load->view('user/index', $data);
-        $this->load->view('tampilan/footer');
+        $this->load->view('user/tampilan/footer');
     }
     public function anggota()
     {
@@ -23,11 +23,11 @@ class User extends CI_Controller
         $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->db->where('role_id', 1);
         $data['anggota'] = $this->db->get('user')->result_array();
-        $this->load->view('tampilan/header', $data);
-        $this->load->view('tampilan/sidebar', $data);
-        $this->load->view('tampilan/topbar', $data);
+        $this->load->view('user/tampilan/header', $data);
+        $this->load->view('user/tampilan/sidebar', $data);
+        $this->load->view('user/tampilan/topbar', $data);
         $this->load->view('user/anggota', $data);
-        $this->load->view('tampilan/footer');
+        $this->load->view('user/tampilan/footer');
     }
     public function ubahProfil()
     {
@@ -43,11 +43,11 @@ class User extends CI_Controller
         );
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('tampilan/header', $data);
-            $this->load->view('tampilan/sidebar', $data);
-            $this->load->view('tampilan/topbar', $data);
+            $this->load->view('user/tampilan/header', $data);
+            $this->load->view('user/tampilan/sidebar', $data);
+            $this->load->view('user/tampilan/topbar', $data);
             $this->load->view('user/ubah-profile', $data);
-            $this->load->view('tampilan/footer');
+            $this->load->view('user/tampilan/footer');
         } else {
             $nama = $this->input->post('nama', true);
             $email = $this->input->post('email', true);
